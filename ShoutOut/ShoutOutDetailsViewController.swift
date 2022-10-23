@@ -3,8 +3,10 @@
 //  ShoutOut
 
 import UIKit
+import CoreData
 
-class ShoutOutDetailsViewController: UIViewController {
+class ShoutOutDetailsViewController: UIViewController, ManagedObjectContextDependentType {
+    var managedObjectContext: NSManagedObjectContext!
 
 	@IBOutlet weak var shoutCategoryLabel: UILabel!
 	@IBOutlet weak var messageTextView: UITextView!
@@ -12,10 +14,13 @@ class ShoutOutDetailsViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(managedObjectContext)
     }
 	
 	// MARK: - Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
+        let navigationController = segue.destination as! UINavigationController
+        let destinationVC = navigationController.viewControllers[0] as! ShoutOutEditorViewController
+        destinationVC.managedObjectContext = managedObjectContext
 	}
 }

@@ -7,14 +7,15 @@ import CoreData
 
 class ShoutOutDraftsViewController: UIViewController,
 									UITableViewDataSource,
-									UITableViewDelegate {
-
+                                    UITableViewDelegate, ManagedObjectContextDependentType {
+    
 	@IBOutlet weak var tableView: UITableView!
     var managedObjectContext: NSManagedObjectContext!
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
+    
 	
 	// MARK: TableView Data Source methods
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,6 +47,17 @@ class ShoutOutDraftsViewController: UIViewController,
 	
 	// MARK: - Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
+        switch segue.identifier {
+        case "shoutOutDetails":
+            let destinationVC = segue.destination as! ShoutOutDetailsViewController
+            destinationVC.managedObjectContext = managedObjectContext
+        case "addShoutOut":
+            let navigationController = segue.destination as! UINavigationController
+            let destinationVC = navigationController.viewControllers[0] as! ShoutOutEditorViewController
+            destinationVC.managedObjectContext = managedObjectContext
+            
+        default:
+            break
+        }
 	}
 }
