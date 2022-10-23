@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		BEFF422C29049B1A00942F76 /* ShoutOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEFF422A29049B1A00942F76 /* ShoutOut.xcdatamodeld */; };
 		BEFF422E29049B4800942F76 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF422D29049B4800942F76 /* CoreDataStack.swift */; };
-		BEFF4234290591D700942F76 /* Shout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF4233290591D700942F76 /* Shout.swift */; };
+		BEFF4234290591D700942F76 /* ShoutOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF4233290591D700942F76 /* ShoutOut.swift */; };
+		BEFF42362905BE6800942F76 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF42352905BE6800942F76 /* Employee.swift */; };
 		F2530B671D985E400029B14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B661D985E400029B14E /* AppDelegate.swift */; };
 		F2530B6C1D985E400029B14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6A1D985E400029B14E /* Main.storyboard */; };
 		F2530B6E1D985E400029B14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6D1D985E400029B14E /* Assets.xcassets */; };
@@ -33,7 +34,8 @@
 /* Begin PBXFileReference section */
 		BEFF422B29049B1A00942F76 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
 		BEFF422D29049B4800942F76 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		BEFF4233290591D700942F76 /* Shout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shout.swift; sourceTree = "<group>"; };
+		BEFF4233290591D700942F76 /* ShoutOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoutOut.swift; sourceTree = "<group>"; };
+		BEFF42352905BE6800942F76 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		F2530B631D985E400029B14E /* ShoutOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoutOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2530B661D985E400029B14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2530B6B1D985E400029B14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,7 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				BEFF422A29049B1A00942F76 /* ShoutOut.xcdatamodeld */,
-				BEFF4233290591D700942F76 /* Shout.swift */,
+				BEFF4233290591D700942F76 /* ShoutOut.swift */,
+				BEFF42352905BE6800942F76 /* Employee.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,7 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEFF422C29049B1A00942F76 /* ShoutOut.xcdatamodeld in Sources */,
-				BEFF4234290591D700942F76 /* Shout.swift in Sources */,
+				BEFF42362905BE6800942F76 /* Employee.swift in Sources */,
+				BEFF4234290591D700942F76 /* ShoutOut.swift in Sources */,
 				F2530B8C1D9861E40029B14E /* ShoutOutDetailsViewController.swift in Sources */,
 				F2530B671D985E400029B14E /* AppDelegate.swift in Sources */,
 				BEFF422E29049B4800942F76 /* CoreDataStack.swift in Sources */,
