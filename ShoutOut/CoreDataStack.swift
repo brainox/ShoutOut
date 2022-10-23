@@ -19,6 +19,9 @@ func createMainContext() -> NSManagedObjectContext {
     
     let storeUrl = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
     
+    // TODO: Use Migrations
+    try! FileManager.default.removeItem(at: storeUrl)
+    
     try! persistentStore.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl)
     
     
