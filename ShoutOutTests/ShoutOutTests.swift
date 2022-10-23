@@ -4,6 +4,7 @@
 
 import XCTest
 import UIKit
+import CoreData
 
 @testable import ShoutOut
 
@@ -32,17 +33,32 @@ class ShoutOutTests: XCTestCase {
 		super.tearDown()
 	}
 	
-	func testExample() {
-		// This is an example of a functional test case.
-		// Use XCTAssert and related functions to verify your tests produce the correct results.
-	}
-	
-	func testPerformanceExample() {
-		// This is an example of a performance test case.
-		self.measure {
-			// Put the code you want to measure the time of here.
-		}
-	}
+    func testManagedObjectContext() {
+        let managedObjectContext = createMainContextInMemory()
+        self.systemUnderTest.managedObjectContext = managedObjectContext
+        XCTAssertNotNil(self.systemUnderTest.managedObjectContext)
+    }
+}
+
+func createMainContextInMemory() -> NSManagedObjectContext {
+    // Initialize NSManagedObjectModel
+    let modelUrl = Bundle.main.url(forResource: "ShoutOut", withExtension: "momd")
+    guard let model = NSManagedObjectModel(contentsOf: modelUrl!) else { fatalError("Model Not Found")}
+    
+    // Configure NSPersistentStoreCoordinator with an NSPersistentStore
+    let persistentStore = NSPersistentStoreCoordinator(managedObjectModel: model)
+    
+    
+    
+    try! persistentStore.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil)
+    
+    
+    
+    // Create and return NSManagedObjectContext
+    let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    context.persistentStoreCoordinator = persistentStore
+    
+    return context
 }
 
 extension UIViewController {
